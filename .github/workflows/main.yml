@@ -21,8 +21,8 @@ steps:
   run: dotnet restore
 - name: Build with dotnet
   run: dotnet build --configuration Release --no-restore
-- name: Publish
-  run: dotnet publish MyApp.sln --configuration Release --framework netcoreapp3.1 --output ./publish --runtime win-x86  --self-contained true -p:PublishTrimmed=true -p:PublishSingleFile=true
+-name: Publish
+    run: dotnet publish -c Release --output ./Release
 - name: FTP Deploy
   uses: SamKirkland/FTP-Deploy-Action@3.0.0
   with:
@@ -33,4 +33,4 @@ steps:
     # FTP account password
     ftp-password: ${{ secrets.FTP_PASSWORD }}
     # The local folder to copy, defaults to root project folder
-    local-dir: /home/runner/work/MyApp/MyApp/publish/
+    local-dir: ./Release/
