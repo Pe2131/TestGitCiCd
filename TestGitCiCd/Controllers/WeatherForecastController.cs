@@ -24,6 +24,7 @@ namespace TestGitCiCd.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
+#this is secret key test
             var x = _configuration["Movies:ServiceApiKey"];
             var x2 = _configuration["Movies:test"];
             
