@@ -24,10 +24,10 @@ namespace TestGitCiCd.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-#this is secret key test
+            //this is secret key test
             var x = _configuration["Movies:ServiceApiKey"];
             var x2 = _configuration["Movies:test"];
-            
+
             _logger.LogInformation(x);
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
