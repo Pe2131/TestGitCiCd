@@ -20,7 +20,7 @@ jobs:
      - name: Build with dotnet
        run: dotnet build --configuration Release --no-restore
      - name: Publish
-       run: dotnet publish src -c Release -o deploy
+       run: dotnet publish -c Release -o deploy
      - name: FTP Deploy
        uses: SamKirkland/FTP-Deploy-Action@3.0.0
        with:
