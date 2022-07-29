@@ -22,7 +22,7 @@ jobs:
      - name: Publish
        run: dotnet publish -c Release -o deploy
      - name: FTP Deploy
-       uses: SamKirkland/FTP-Deploy-Action@3.0.0
+       uses: SamKirkland/FTP-Deploy-Action@4.3.0
        with:
         # Deployment destination server & path. Formatted as protocol://domain.com:port/full/destination/path/
          ftp-server: ${{ secrets.FTP_SERVER }}
